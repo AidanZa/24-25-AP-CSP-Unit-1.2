@@ -29,7 +29,7 @@ def get_names(file_name):
     leaderboard_file.close()
 
     #  TODO 6: return the names list in place of the empty list
-    return []
+    return [get_names,get_scores()]
 
 
 # return scores from the leaderboard file
@@ -43,9 +43,10 @@ def get_scores(file_name):
         index = 0
 
         # TODO 3: use a while loop to index beyond the comma, skipping the player's name
-
+        while (line[index] != ","):
         # TODO 4: use a while loop to get the score
-        while (line[index] != "\n"):
+    while(line[index] != "\n"):
+
 
         # TODO 5: add the player score to the scores list
 
