@@ -20,8 +20,8 @@ maze_painter.pensize(5)
 # repeat
 
 # randomize location of doors and barriers in wall
-door = rand.randint(path_width*2, (length - path_width*2))
-barrier = rand.randint(path_width*2, (length - path_width*2))
+door = rand.randint(path_width*2, (length - path_width))
+barrier = rand.randint(path_width*2, (length - path_width))
 
 def draw_barrier():
     maze_painter.right(90)
@@ -38,10 +38,10 @@ for wall in range(21):
         draw_barrier()
     maze_painter.forward(length- path_width- (length/3))
     maze_painter.left(90)
+    if (wall < 21):
+        maze_painter.forward(door)
+        maze_painter.backward(door)
     length += 15
-
-
-
 
 wn.listen()
 wn.mainloop()
